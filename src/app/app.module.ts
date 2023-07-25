@@ -12,9 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { CoreComponent } from './core/core.component';
 import { MainComponent } from './main/main.component';
 import { SharedComponent } from './shared/shared.component';
-import { LoginComponent } from './user/login/login.component';
-import { RegisterComponent } from './user/register/register.component';
-import { ProfileComponent } from './user/profile/profile.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { ProfileComponent } from './auth/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { ProfileComponent } from './user/profile/profile.component';
     SharedComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
