@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "eshop-project-9ac49": {
+      "hosting": {
+        "eShop-project": [
+          "eshop-project-9ac49"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "eshop-project-9ac49"
+  }
+}
