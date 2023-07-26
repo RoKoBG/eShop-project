@@ -20,7 +20,7 @@
             <li><a routerLink="/auth/register">Register</a></li>
           </ng-container>
           <ng-container *ngIf="isLoggedIn">
-            <li><a href="#">Profile</a></li>
+            <li><a href="/auth/profile">Profile</a></li>
             <li><a href="#">Add</a></li>
             <li><a routerLink="/auth/login" (click)="logout()">Logout</a></li>
           </ng-container>
