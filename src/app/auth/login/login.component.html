@@ -1,1 +1,60 @@
-<p>login works!</p>
+<div class="container">
+  <div class="center">
+    <div class="last-items-box">
+      <div class="last-items-box-bar">login</div>
+      <div class="login">
+        <div class="login-screen">
+          <div class="app-title">
+            <h1 class="form">Welcome!</h1>
+          </div>
+
+          <div class="login-form">
+            <form>
+              <div class="control-group">
+                <input
+                  type="text"
+                  class="login-field"
+                  value=""
+                  placeholder="Email"
+                  id="login-name"
+                  name="email"
+                  [(ngModel)]="email"
+                />
+                <label
+                  class="login-field-icon fui-user"
+                  for="login-name"
+                ></label>
+              </div>
+
+              <div class="control-group">
+                <input
+                  type="password"
+                  class="login-field"
+                  value=""
+                  placeholder="Password"
+                  id="login-pass"
+                  name="password"
+                  [(ngModel)]="password"
+                />
+                <label
+                  class="login-field-icon fui-lock"
+                  for="login-pass"
+                >Password</label>
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-primary btn-large btn-block"
+                (click)="login()">
+                LOGIN
+              </button>
+            </form>
+            <a class="login-link" routerLink="/auth/register"
+              >You dont have account? CLICK HERE!</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

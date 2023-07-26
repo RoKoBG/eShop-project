@@ -12,11 +12,11 @@ div.header {
     0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 .logo {
-  background-image: url("");
+  background-image: url("/assets/logo.png");
   width: 170px;
-  height: 95px;
+  height: 100px;
   background-repeat: no-repeat;
-  background-size: 170px 95px;
+  background-size: 170px 100px;
 }
 
 /* navbars */

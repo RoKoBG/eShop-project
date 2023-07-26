@@ -1,0 +1,24 @@
+.left {
+    display: block;
+    flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: 65%;
+    align-self: auto;
+    order: 1;
+    margin-right: 15px;
+  }
+  .right {
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 35%;
+    align-self: auto;
+    order: 2;
+  }
+  .container{
+    width:50%;
+  }
+  .last-items-box {
+    background-color: rgb(212, 230, 255);
+  }
+  
