@@ -10,11 +10,11 @@ import { Auth } from '@angular/fire/auth';
 export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
-  user: [] = [];
+  user:[] = [];
   ngOnInit(): void {}
   constructor(private auth: AuthService) {}
   login() {
-    
+   
     this.auth.login(this.email, this.password);
     this.email = '';
     this.password = '';
