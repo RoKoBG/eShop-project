@@ -7,6 +7,7 @@ import {
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { updatePhoneNumber } from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root',
 })
@@ -16,7 +17,7 @@ export class AuthService {
     public fireAuth: AngularFireAuth,
     public router: Router,
     public firestore: AngularFirestore,
-    public ngZone: NgZone,
+    public ngZone: NgZone
   ) {
     this.fireAuth.authState.subscribe((user) => {
       if (user) {
@@ -33,7 +34,7 @@ export class AuthService {
   // Login
 
   login(email: string, password: string) {
-     this.fireAuth
+    this.fireAuth
       .signInWithEmailAndPassword(email, password)
       .then((res) => {
         this.SetUserData(res.user);
@@ -50,22 +51,30 @@ export class AuthService {
       });
   }
   // Register
-  register(email: string, password: string) {
-     this.fireAuth
+  register(
+    email: string,
+    password: string,
+    firstName: string,
+    lastName: string,
+    photoUrl: string,
+  ) {
+    this.fireAuth
       .createUserWithEmailAndPassword(email, password)
       .then((res) => {
         this.SetUserData(res.user);
-
+        res.user?.updateProfile({
+          displayName: firstName + ' ' + lastName,
+          photoURL: photoUrl,
+        });
+        
       })
       .catch((err) => {
         console.log(err.message);
-      
-      
       });
-      this.router.navigate(['/auth/login'])
-
+    this.router.navigate(['home']);
   }
-   get isLogged(): boolean {
+
+  get isLogged(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null ? true : false;
   }
@@ -77,17 +86,20 @@ export class AuthService {
     const userData: User = {
       uid: user.uid,
       email: user.email,
-      username: user.username,
+      displayName: user.displayName,
       photoUrl: user.photoURL,
     };
-    return userRef.set(userData,{
-      merge:true,
+    return userRef.set(userData, {
+      merge: true,
     });
   }
-  logout(){
-     return this.fireAuth.signOut().then(()=>{
-      localStorage.removeItem('user');
-      this.router.navigate(['/auth/login']);
-    })
+  async logout() {
+    await this.fireAuth.signOut();
+    localStorage.removeItem('user');
+    this.router.navigate(['/auth/login']);
+  }
+  update(displayname:string,photo:string) {
+    
+    this.router.navigate(['/auth/profile'])
   }
 }

@@ -42,7 +42,56 @@
                     for="login-pass"
                   ></label>
                 </div>
+ <!-- first name -->
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="login-field"
+                    value=""
+                    placeholder="First Name"
+                    id="firstName"
+                    name="firstName"
+                    [(ngModel)]="firstName"
+                  />
+                  <label
+                    class="login-field-icon fui-user"
+                    for="firstName"
+                  ></label>
+                </div>
+                <!-- last name -->
   
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="login-field"
+                    value=""
+                    placeholder="Last Name"
+                    id="lastName"
+                    name="lastName"
+                    [(ngModel)]="lastName"
+                  />
+                  <label
+                    class="login-field-icon fui-user"
+                    for="lastName"
+                  ></label>
+                </div>
+                <!-- photo Url -->
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="login-field"
+                    value=""
+                    placeholder="Photo URL"
+                    id="photoUrl"
+                    name="photoUrl"
+                    [(ngModel)]="photoUrl"
+                  />
+                  <label
+                    class="login-field-icon fui-user"
+                    for="photoURL"
+                  ></label>
+                </div>
+               
                 <button
                   type="button"
                   class="btn btn-primary btn-large btn-block"

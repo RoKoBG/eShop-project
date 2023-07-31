@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="center">
+    <div class="last-items-box">
+      <div class="last-items-box-bar">Update Profile</div>
+      <div class="profile-wrapper">
+        <div class="profile-card">
+          <form>
+              <!-- Name -->
+            <div class="control-group">
+              <input
+                type="text"
+                class="login-field"
+                value=""
+                placeholder="Display Name"
+                id="displayname"
+                name="displayname"
+                [(ngModel)]="displayname"
+              />
+              <label class="login-field-icon fui-user" for="displayname"></label>
+            </div>
+
+            <!-- Photo -->
+            <div class="control-group">
+                <input
+                  type="text"
+                  class="login-field"
+                  value=""
+                  placeholder="Photo URL"
+                  id="photo"
+                  name="photo"
+                  [(ngModel)]="photo"
+                />
+                <label class="login-field-icon fui-user" for="displayname"></label>
+              </div>
+            <button
+              type="button"
+              class="btn btn-primary btn-large btn-block"
+              
+            >
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
