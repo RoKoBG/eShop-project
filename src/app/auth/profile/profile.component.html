@@ -9,9 +9,51 @@
           </div>
           <div>Name: {{ user?.displayName }}</div>
           <div>Email: {{ user?.email }}</div>
-          <button>
-            <a routerLink="/auth/update-profile">Edit</a>
-          </button>
+
+          <p>Articles dashboard</p>
+          <!-- create -->
+          <h4>Create Article</h4>
+          <div class="profile-wrapper">
+            <div class="profile-card">
+              <form>
+                <!-- Name -->
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="login-field"
+                    value=""
+                    placeholder="Article name"
+                    id="name"
+                    name="name"
+                    [(ngModel)]="name"
+                  />
+                  <label class="login-field-icon fui-user" for="name"></label>
+                </div>
+
+                <!-- Photo -->
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="login-field"
+                    value=""
+                    placeholder="Article TEXT"
+                    id="text"
+                    name="text"
+                    [(ngModel)]="text"
+                  />
+                  <label class="login-field-icon fui-user" for="text"></label>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-large btn-block"
+                  (click)="addArticle()"
+                >
+                  Create article
+                </button>
+              </form>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>

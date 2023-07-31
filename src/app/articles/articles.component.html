@@ -1,0 +1,24 @@
+
+          <div class="container">
+            <div class="center">
+              <div class="last-items-box">
+                <div class="last-items-box-bar">All Articles</div>
+                <div class="profile-wrapper">
+                  <div class="profile-card">
+                   
+                    <h4>All articles</h4>
+                    <ng-container *ngIf="articleList">
+                        <div *ngFor="let arts of articleList">
+                            <div>Article Name: {{ arts.name }}</div>
+                            <div>Text : {{ arts.text }}</div>
+                            <button (click)="deleteArticle(arts)">Delete</button>
+                          </div>
+                          <p *ngIf="articleList.length==0">No Articles</p>
+                    </ng-container>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
