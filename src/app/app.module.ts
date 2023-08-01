@@ -14,8 +14,7 @@ import { MainComponent } from './main/main.component';
 import { SharedComponent } from './shared/shared.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { ArticlesComponent } from './articles/articles.component';
-
+import { ProductsComponent } from './products/products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +24,7 @@ import { ArticlesComponent } from './articles/articles.component';
     SharedComponent,
     HeaderComponent,
     FooterComponent,
-    ArticlesComponent,
-    
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,

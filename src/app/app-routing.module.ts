@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
-import { ArticlesComponent } from './articles/articles.component';
+import { ProductsComponent } from './products/products.component';
 const routes: Routes = [
   {
     path: '',
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'articles',
-    component: ArticlesComponent, 
+    path: 'products',
+    component: ProductsComponent, 
   },
   {
     path: 'auth',

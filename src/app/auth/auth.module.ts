@@ -15,4 +15,6 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     FormsModule,
   ]
 })
-export class AuthModule { }
+export class AuthModule { 
+  
+}
