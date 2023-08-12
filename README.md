@@ -25,6 +25,7 @@
  - Firestore for Database
  - Images from Google
  - Web design with HTML/CSS
+## Hosted on Firebase Hosting with address: https://eshop-project-9ac49.web.app/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
