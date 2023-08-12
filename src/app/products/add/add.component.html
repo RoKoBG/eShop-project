@@ -5,6 +5,7 @@
       <div class="row">
         <div class="col"></div>
         <div class="col-7">
+          <br/>
           <form #addProductsForm="ngForm" (ngSubmit)="submit()" class="">
             <label for="name">Product Name</label>
             <input
@@ -20,7 +21,9 @@
             <p class="error-message" *ngIf="name.invalid && name.touched">
               Please Enter Product Name!
             </p>
-            <label for="category">Select Category</label>
+            <br/>
+
+            <label for="category">Select Category: </label>
             <select
               class="form-control"
               id="category"
@@ -29,13 +32,14 @@
               name="category"
             >
               <option value="" disabled>Please select category</option>
+              <option value="Smartphones">Smartphones</option>
               <option value="Processors">Processors</option>
               <option value="Video Cards">Video Cards</option>
               <option value="Monitors">Monitors</option>
               <option value="Storage">Storage</option>
-              <option value="Read Only Memory">Read Only Memory</option>
-              <option value="Smartphones">Smartphones</option>
-              <option value="Peripherals">Peripherals</option>
+              <option value="Other">Other</option>
+
+              
             </select>
             <p
               class="error-message"
@@ -43,7 +47,10 @@
             >
               Please Select Category!
             </p>
-            <label for="description">Additional Information</label>
+            <div>
+              <br/>
+
+            <label for="description">Description</label><br/>
             <textarea
               class="form-control"
               id="description"
@@ -53,19 +60,21 @@
               name="description"
               minlength="20"
               required
-            ></textarea>
+            ></textarea></div>
             <p
               class="error-message"
               *ngIf="description.invalid && description.touched"
             >
               Please enter description more than 20 symbols!
             </p>
+            <br/>
+
             <label>Brand</label>
             <input
               class="form-control"
               type="text"
               #brand="ngModel"
-              placeholder="Samsung, Huawei... etc."
+              placeholder="Iphone, MSI... etc."
               [(ngModel)]="product.brand"
               name="brand"
               required
@@ -73,12 +82,14 @@
             <p class="error-message" *ngIf="brand.invalid && brand.touched">
               Please Enter a Brand!
             </p>
+            <br/>
+
             <label>Product Code:</label>
             <input
-              class="form-control"
+            class="form-control"
               type="text"
               #productCode="ngModel"
-              placeholder="Samsung, Huawei... etc."
+              placeholder=""
               [(ngModel)]="product.code"
               name="productCode"
               required
@@ -89,12 +100,14 @@
             >
               Please Enter a Product Code!
             </p>
+            <br/>
+
             <label>Image URL</label>
             <input
               class="form-control"
               type="text"
               #imgUrl="ngModel"
-              placeholder="https://..."
+              placeholder="http://..."
               [(ngModel)]="product.imageUrl"
               pattern="https?:\/\/.*"
               name="imgURL"
@@ -103,6 +116,8 @@
             <p class="error-message" *ngIf="imgUrl.invalid && imgUrl.touched">
               Please provide valid URL
             </p>
+            <br/>
+
             <label>Quantity</label>
             <input
               class="form-control"
@@ -119,6 +134,8 @@
             >
               Please Enter Quantity!
             </p>
+            <br/>
+
             <label>Price</label>
             <input
               class="form-control"

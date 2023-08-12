@@ -2,42 +2,40 @@
 <div class="container">
     <div class="center">
       <div class="last-items-box">
-        <div class="last-items-box-bar">{{prodInfo.brand}} {{prodInfo.name}}</div>
+        <div class="last-items-box-bar">DETAILS</div>
         <div class="prod-wrap">
             
             <div class="row">
-                <div class="col-md-5">
-                    <img class="pt-4 pl-4 pr-4" style="height: 450px; width: 450px; display: block;"
+                <div >
+                    <img style="height: 450px; width: 100%; display: block; margin:0 auto;"
                         [src]="prodInfo.imageUrl" alt="{{prodInfo.name}}">
                 </div>
         
-                <div class="col-md-7">
-                    <div class="editDelBtn" *ngIf="user?.email == 'rosen.koichev@gmail.com' ">
-                        <button type="button" class="btn btn-warning" (click)="newProdInfo(prodInfo)"
-                            routerLink="/products/edit/{{prodInfo.id}}">
-                            <i class="fa fa-pencil"></i> Edit</button>
-                        <button type="button" class="btn btn-danger" (click)="delete(prodInfo)">
-                            <i class="fas fa-trash-alt"></i> Delete</button>
-                    </div>
+                <div>
                     <h2>{{prodInfo.brand}} {{prodInfo.name}}</h2>
-                    <p>Product Code: <i>{{prodInfo.code}}</i></p>
-                    <p class="price">{{prodInfo.price}} лв.</p>
+                    <p><b>Product Code:</b> {{prodInfo.code}}</p>
+                    <p><b>Price: </b> {{prodInfo.price}} $</p>
                     <p><b>In Stock: </b> {{prodInfo.quantity}}</p>
-                    <p><b>Brand: </b> <i><u>{{prodInfo.brand}}</u></i></p>
+                    <p><b>Brand: </b> {{prodInfo.brand}}</p>
                     
                             
                             <p><b>Description: </b>{{prodInfo.description}}</p>
                     
-                    <label>Quantity: </label>
-                    <input type="number" value="1">
+                    
                     <div *ngIf="prodInfo.quantity === 0; then ngOut else ngIn"></div>
         
                     <ng-template #ngIn>
-                        <button type="button" class="btn btn-default cart" (click)="addCart(prodInfo)"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                        <button type="button" class="btn btn-default cart" (click)="addCart(prodInfo)"> Add to cart</button>
                     </ng-template>
                     <ng-template #ngOut>
-                        <button type="button" class="btn btn-default cart" disabled><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                        <button type="button" class="btn btn-default cart" disabled> Add to cart</button>
                     </ng-template>
+                    <div class="editDelBtn" *ngIf="user?.email == 'rosen.koichev@gmail.com' ">
+                        <button type="button" class="btn btn-warning" (click)="newProdInfo(prodInfo)"
+                            routerLink="/products/edit/{{prodInfo.id}}">
+                            <i class="fa fa-pencil"></i> Edit</button>
+                        <button type="button" class="btn btn-danger" (click)="delete(prodInfo)">Delete</button>
+                    </div>
                 </div>
             </div>
        

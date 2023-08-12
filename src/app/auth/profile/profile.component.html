@@ -7,8 +7,8 @@
           <div>
             <img src="{{ user?.photoURL }}" width="150px" height="150px" />
           </div>
-          <div>Name: {{ user?.displayName }}</div>
-          <div>Email: {{ user?.email }}</div>
+          <div><b>Name:</b> {{ user?.displayName }}</div>
+          <div><b>Email:</b> {{ user?.email }}</div>
 
           <button *ngIf="user?.email === 'rosen.koichev@gmail.com' " routerLink="/products/add">Add Product</button>
 

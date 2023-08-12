@@ -9,9 +9,8 @@
           <table id="cart">
             <thead>
               <tr>
-                <th style="width: 50%">Product</th>
-                <th style="width: 10%">Price</th>
-                <th style="width: 22%" class="text-center">Subtotal</th>
+                <th style="width: 70%">Product</th>
+                <th style="width: 30%">Price</th>
               </tr>
             </thead>
             <!-- <div *ngFor="let product of passProductInfo">
@@ -31,18 +30,13 @@
                       />
                     </div>
                     <div>
-                      <h4>
-                        {{ product.brand }} {{ product.name }}
-                      </h4>
+                      <h4>{{ product.brand }} {{ product.name }}</h4>
                     </div>
                   </div>
                 </td>
-                <td>{{ product.price }} лв.</td>
+                <td>{{ product.price }} $</td>
 
-                <td>
-                  {{ (product.price * quantityForBuy).toFixed(2) }}
-                  лв.
-                </td>
+  
                 <td class="actions" data-th=""></td>
               </tr>
             </tbody>
@@ -65,7 +59,7 @@
                   <button
                     (click)="buy(quantityForBuy, products)"
                     class="btn btn-success btn-block"
-                    style="width: 150px"
+                    style="width: 150px;background-color: red;"
                   >
                     Checkout <i class="fa fa-angle-right"></i>
                   </button>
@@ -89,17 +83,16 @@
       <!-- <app-product-td [product]="passProductInfo"></app-product-td> -->
 
       <tbody>
-        <p style="font-size: larger">
+        <p style="font-size: larger; text-align: center">
           You don't have items in your cart! <br />
-          <a routerLink="/products">Go buy some!</a>
         </p>
       </tbody>
 
       <tfoot>
         <tr>
           <td>
-            <a routerLink="/products" class="btn btn-warning"
-              ><i class="fa fa-angle-left"></i> Continue Shopping</a
+            <a routerLink="/products" class="btn btn-warning" style="text-align: center;">
+              Continue Shopping</a
             >
           </td>
           <td colspan="2" class="hidden-xs"></td>

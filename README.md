@@ -1,4 +1,23 @@
-# EShopProject
+# Functionalities
+## Guests
+
+- View of Home page.
+- View of Products page.
+- View of Details of the products page.
+- View of Login and Register pages.
+
+## Users
+
+- View of Profile page.
+- View of Cart page.
+- Can buy products.
+
+## Admin
+- Can Add products.
+- Can Edit products.
+- Can delete products.
+
+# EShopProject for SoftUni Angular Exam
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
