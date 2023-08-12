@@ -1,0 +1,19 @@
+<div class="prod-container"   *ngFor="let product of (products$ | async)">
+    <div class="prod-card">
+      <div class="prod-card-img">
+        <img
+          src="{{product.imageUrl}}"
+          width="200px"
+          height="150px"
+        />
+      </div>
+      
+      <p class="prod-card-name">{{product.brand}} {{product.name}}</p>
+    
+      <div class="prod-card-price">Price: {{product.price}}$</div>
+      <div class="prod-card-price">Quantity: {{product.quantity}}</div>
+      <a routerLink="details/{{product.id}}" (click)="prodDetails(product)">
+      <p>More details</p>
+      </a>
+    </div>
+  </div>

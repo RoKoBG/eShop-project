@@ -11,7 +11,7 @@
           <div class="login-form">
             <form>
               <div class="control-group">
-                <input
+                <input ngModel #name = "ngModel"
                   type="text"
                   class="login-field"
                   value=""
@@ -19,15 +19,21 @@
                   id="login-name"
                   name="email"
                   [(ngModel)]="email"
+                  required
                 />
+                <p *ngIf="name.invalid && name.touched">
+                  Please Enter Valid Email!
+                </p>
                 <label
                   class="login-field-icon fui-user"
                   for="login-name"
                 ></label>
               </div>
+              
+              
 
               <div class="control-group">
-                <input
+                <input  
                   type="password"
                   class="login-field"
                   value=""
@@ -35,11 +41,13 @@
                   id="login-pass"
                   name="password"
                   [(ngModel)]="password"
+                  required
                 />
+               
                 <label
                   class="login-field-icon fui-lock"
                   for="login-pass"
-                >Password</label>
+                ></label>
               </div>
 
               <button

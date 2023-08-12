@@ -2,6 +2,10 @@
     <nav class="navbar">
       <!-- LOGO -->
       <div class="logo"></div>
+      <ng-container *ngIf="isLoggedIn">
+        Welcome {{user.displayName}}
+        </ng-container>
+     
 
       <!-- NAVIGATION MENU -->
       <ul class="nav-links">
@@ -18,10 +22,11 @@
             <li><a routerLink="/auth/register">Register</a></li>
           </ng-container>
           <ng-container *ngIf="isLoggedIn">
+            <li><a routerLink="/cart">Cart</a></li>
             <li><a routerLink="/auth/profile">Profile</a></li>
             <li><a routerLink="/auth/login" (click)="logout()">Logout</a></li>
           </ng-container>
-
+          
         </div>
       </ul>
     </nav>

@@ -14,7 +14,9 @@ import { MainComponent } from './main/main.component';
 import { SharedComponent } from './shared/shared.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductsModule } from './products/products.module';
+import { CartComponent } from './cart/cart.component';
+import { ProductComponent } from './cart/product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { ProductsComponent } from './products/products.component';
     SharedComponent,
     HeaderComponent,
     FooterComponent,
-    ProductsComponent,
+    CartComponent,
+    ProductComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,7 @@ import { ProductsComponent } from './products/products.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    ProductsModule
   ],
   providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent],

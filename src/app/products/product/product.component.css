@@ -1,0 +1,38 @@
+.prod-wrap{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-evenly;
+
+}
+.prod-container{
+    padding-top:10px;
+}
+
+.prod-card {
+  width: 250px;
+  height:fit-content;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;  
+  color: #a5a5a5;
+  text-align: center;
+ 
+  
+
+}
+.prod-card-img {
+    padding-top: 10px;
+    width: 100%;
+  
+}
+.prod-card-name{
+    padding: 10px;
+}
+.prod-card-price{
+    padding: 10px;
+}
+.prod-card-buy{
+    width:100px;
+    height:50px;
+    margin-bottom: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;  
+    background-color: rgb(0, 149, 255);
+}

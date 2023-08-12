@@ -4,17 +4,18 @@ import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
-import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { getAuth } from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+ 
   userData: any;
   constructor(
-    public fireAuth: AngularFireAuth,
-    public router: Router,
+    private fireAuth: AngularFireAuth,
+    private router: Router,
     public firestore: AngularFirestore,
     public ngZone: NgZone
   ) {
@@ -28,6 +29,9 @@ export class AuthService {
         JSON.parse(localStorage.getItem('user')!);
       }
     });
+  }
+  getUserState() {
+    return this.fireAuth.authState;
   }
 
   // Login
@@ -55,7 +59,7 @@ export class AuthService {
     password: string,
     firstName: string,
     lastName: string,
-    photoUrl: string,
+    photoUrl: string
   ) {
     this.fireAuth
       .createUserWithEmailAndPassword(email, password)
@@ -65,7 +69,6 @@ export class AuthService {
           displayName: firstName + ' ' + lastName,
           photoURL: photoUrl,
         });
-        
       })
       .catch((err) => {
         console.log(err.message);
@@ -92,13 +95,16 @@ export class AuthService {
       merge: true,
     });
   }
-  async logout() {
-    await this.fireAuth.signOut();
-    localStorage.removeItem('user');
-    this.router.navigate(['/auth/login']);
-  }
-  update(displayname:string,photo:string) {
-    
-    this.router.navigate(['/auth/profile'])
+
+  logout() {
+    return this.fireAuth
+      .signOut()
+      .then(() => {
+        localStorage.removeItem('user');
+        this.router.navigate(['/auth/login']);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 }

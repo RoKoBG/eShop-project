@@ -1,0 +1,112 @@
+<div *ngIf="products; else elseBlock">
+  Content to render when condition is true.
+
+  <div class="container">
+    <div class="center">
+      <div class="last-items-box">
+        <div class="last-items-box-bar">Cart</div>
+        <div class="prod-wrap">
+          <table id="cart">
+            <thead>
+              <tr>
+                <th style="width: 50%">Product</th>
+                <th style="width: 10%">Price</th>
+                <th style="width: 22%" class="text-center">Subtotal</th>
+              </tr>
+            </thead>
+            <!-- <div *ngFor="let product of passProductInfo">
+                        <app-product-td [product]="product"></app-product-td>
+                    </div> -->
+            <!-- <app-product-td [product]="passProductInfo"></app-product-td> -->
+
+            <tbody *ngFor="let product of products">
+              <tr>
+                <td>
+                  <div class="row">
+                    <div class="col-sm-2 hidden-xs">
+                      <img
+                        src="{{ product.imageUrl }}"
+                        alt="{{ product.name }}"
+                        style="width: 200px; height: 200px"
+                      />
+                    </div>
+                    <div>
+                      <h4>
+                        {{ product.brand }} {{ product.name }}
+                      </h4>
+                    </div>
+                  </div>
+                </td>
+                <td>{{ product.price }} лв.</td>
+
+                <td>
+                  {{ (product.price * quantityForBuy).toFixed(2) }}
+                  лв.
+                </td>
+                <td class="actions" data-th=""></td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td>
+                  <a routerLink="/products" class="btn btn-warning"
+                    ><i class="fa fa-angle-left"></i> Continue Shopping</a
+                  >
+                </td>
+                <td>
+                  <button class="btn btn-danger btn-sm" (click)="removeItems()">
+                    <i class="fa fa-trash-o">Empty Cart</i>
+                  </button>
+                </td>
+                <td colspan="2" class="hidden-xs"></td>
+                <!-- <td class="hidden-xs text-center"><strong>Total 0 лв.</strong></td> -->
+                <td>
+                  <button
+                    (click)="buy(quantityForBuy, products)"
+                    class="btn btn-success btn-block"
+                    style="width: 150px"
+                  >
+                    Checkout <i class="fa fa-angle-right"></i>
+                  </button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <div class="container">
+    <table id="cart" class="table table-hover table-condensed">
+      <thead></thead>
+      <!-- <div *ngFor="let product of passProductInfo">
+                            <app-product-td [product]="product"></app-product-td>
+                        </div> -->
+      <!-- <app-product-td [product]="passProductInfo"></app-product-td> -->
+
+      <tbody>
+        <p style="font-size: larger">
+          You don't have items in your cart! <br />
+          <a routerLink="/products">Go buy some!</a>
+        </p>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>
+            <a routerLink="/products" class="btn btn-warning"
+              ><i class="fa fa-angle-left"></i> Continue Shopping</a
+            >
+          </td>
+          <td colspan="2" class="hidden-xs"></td>
+          <!-- <td class="hidden-xs text-center"><strong>Total 0 лв.</strong></td> -->
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</ng-template>

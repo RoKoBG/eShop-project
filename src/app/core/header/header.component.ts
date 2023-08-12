@@ -7,11 +7,14 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  constructor(private auth: AuthService, public router: Router) {}
+  user = JSON.parse(localStorage.getItem('user')!);
+  constructor(private auth: AuthService, public router: Router) {
+  }
 
   get isLoggedIn(): boolean {
     return this.auth.isLogged;
   }
+
   logout(): void {
     this.auth
       .logout()
