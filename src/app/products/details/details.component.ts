@@ -48,4 +48,7 @@ export class DetailsComponent implements OnInit {
   delete(product: Product) {
     this.prodService.delete(product);
   }
+  get isLoggedIn(): boolean {
+    return this.authService.isLogged;
+  }
 }

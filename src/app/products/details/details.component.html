@@ -25,10 +25,10 @@
                     <div *ngIf="prodInfo.quantity === 0; then ngOut else ngIn"></div>
         
                     <ng-template #ngIn>
-                        <button type="button" class="btn btn-default cart" (click)="addCart(prodInfo)"> Add to cart</button>
+                        <button type="button" class="btn btn-default cart" *ngIf="isLoggedIn" (click)="addCart(prodInfo)"> Add to cart</button>
                     </ng-template>
                     <ng-template #ngOut>
-                        <button type="button" class="btn btn-default cart" disabled> Add to cart</button>
+                        <button type="button" class="btn btn-default cart"  disabled> Add to cart</button>
                     </ng-template>
                     <div class="editDelBtn" *ngIf="user?.email == 'rosen.koichev@gmail.com' ">
                         <button type="button" class="btn btn-warning" (click)="newProdInfo(prodInfo)"
