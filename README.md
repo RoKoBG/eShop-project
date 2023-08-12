@@ -18,6 +18,13 @@
 - Can delete products.
 
 # EShopProject for SoftUni Angular Exam
+ ## Used features
+ - Angular for Front-End
+ - Firebase for Backend
+ - Firebase Authentication
+ - Firestore for Database
+ - Images from Google
+ - Web design with HTML/CSS
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
