@@ -1,3 +1,4 @@
+# EShopProject for SoftUni Angular Exam
 # Functionalities
 ## Guests
 
@@ -17,7 +18,6 @@
 - Can Edit products.
 - Can delete products.
 
-# EShopProject for SoftUni Angular Exam
  ## Used features
  - Angular for Front-End
  - Firebase for Backend
